@@ -2,6 +2,7 @@
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env) => {
   const plugins = [
@@ -11,6 +12,9 @@ module.exports = (env) => {
          collapseWhitespace: true,
       } : false,
     }),
+    new CopyWebpackPlugin([
+      'src/LICENCE',
+    ])
   ];
 
   if (env === 'prod') {
@@ -39,6 +43,10 @@ module.exports = (env) => {
               }]]
             }
           }
+        },
+        {
+          test: /\.json5$/,
+          loader: 'json5-loader',
         }
       ]
     }
