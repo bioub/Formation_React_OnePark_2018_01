@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { desactivable } from './desactivable';
 
 export class ButtonCounter extends Component {
 
@@ -29,3 +30,6 @@ ButtonCounter.propTypes = {
 ButtonCounter.defaultProps = {
   initialCount: 0,
 };
+
+
+export const ButtonCounterDesactivable = desactivable(ButtonCounter);

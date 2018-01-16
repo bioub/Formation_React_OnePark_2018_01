@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Hello } from './Hello';
-import { Horloge } from './Horloge';
-import { ButtonCounter } from './ButtonCounter';
+import { Horloge, HorlogeDesactivable } from './Horloge';
+import { ButtonCounter, ButtonCounterDesactivable } from './ButtonCounter';
 import { ContactForm } from './ContactForm';
 
 class App extends Component {
@@ -28,11 +28,15 @@ class App extends Component {
       <div className="App" >
         <Hello name={this.state.contact.firstName} />
         <hr />
-        <Horloge/>
+        <Horloge format="HH:mm"/>
         <hr />
         <ButtonCounter/>
         <hr />
         <ContactForm onAdded={this.contactAdded} />
+        <hr />
+        <HorlogeDesactivable format="HH:mm" />
+        <hr />
+        <ButtonCounterDesactivable />
       </div>
     );
   }
