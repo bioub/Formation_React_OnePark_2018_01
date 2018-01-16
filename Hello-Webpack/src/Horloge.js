@@ -3,7 +3,7 @@ import format from 'date-fns/format';
 
 // 1 - Installer et configurer copy-webpack-plugin
 // pour copier la Licence dans dist
-// 2 - Installet et configurer json5-loader
+// 2 - Installer et configurer json5-loader
 // pour charger la config au format JSON5
 
 export class Horloge {

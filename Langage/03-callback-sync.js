@@ -5,7 +5,17 @@ firstNames.forEach(function feCb(elt, i) {
   console.log(elt, i);
 });
 
-// Programmation fonctionnelle
+Array.prototype.each = function(cb) {
+  for (let i=0; i<this.length; i++) {
+    cb(this[i], i, this);
+  }
+};
+
+firstNames.each(function feCb(elt, i) {
+  console.log(elt, i);
+});
+
+// Programmation fonctionnelle (ES5)
 firstNames.filter((elt, i) => elt.length < 7)
           .map((elt) => elt.toUpperCase())
           .forEach((elt) => console.log(elt));
