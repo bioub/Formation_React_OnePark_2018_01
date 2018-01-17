@@ -6,7 +6,7 @@ import './App.css';
 export const App = () => {
   return (
     <div className="App">
-      <TodoFormContainer msg="Coucou" />
+      <TodoFormContainer />
       <TodoListContainer />
     </div>
   );
