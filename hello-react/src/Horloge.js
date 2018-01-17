@@ -5,12 +5,11 @@ import PropTypes from 'prop-types'
 
 export class Horloge extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      now: new Date(),
-    };
-  }
+  // ESNext : property (supporté par create-react-app)
+  // (sinon installer le plugin babel)
+  state = {
+    now: new Date(),
+  };
 
   componentDidMount() {
     this._intervalId = setInterval(() => {

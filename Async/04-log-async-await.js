@@ -10,10 +10,13 @@ function log(file, msg) {
   return appendFile(file, msg);
 }
 
+// ES8 (juin 2017), Node 8
+console.time('Thread idle');
+console.time('Done');
 (async () => {
   try {
     try {
-      await stat(logDir);
+      const stats = await stat(logDir);
     }
     catch (err) {
       if (err.code === 'ENOENT') {
@@ -29,10 +32,11 @@ function log(file, msg) {
     await log(logFile, 'Ligne 3');
     await log(logFile, 'Ligne 4');
     await log(logFile, 'Ligne 5');
-    console.log('Done');
+
   }
   catch (err) {
     console.log(`Err : ${err.message}`);
   }
-
+  console.timeEnd('Done');
 })();
+console.timeEnd('Thread idle');

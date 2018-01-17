@@ -10,6 +10,8 @@ function log(file, msg) {
   appendFileSync(file, msg);
 }
 
+console.time('Thread idle');
+console.time('Done');
 try {
   try {
     statSync(logDir);
@@ -28,8 +30,9 @@ try {
   log(logFile, 'Ligne 3');
   log(logFile, 'Ligne 4');
   log(logFile, 'Ligne 5');
-  console.log('Done');
 }
 catch (err) {
   console.log(`Err : ${err.message}`);
 }
+console.timeEnd('Thread idle');
+console.timeEnd('Done');

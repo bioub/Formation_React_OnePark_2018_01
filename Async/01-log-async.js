@@ -10,6 +10,8 @@ function log(file, msg, cb) {
   appendFile(file, msg, cb);
 }
 
+console.time('Thread idle');
+console.time('Done');
 stat(logDir, (err, stats) => {
   if (err && err.code === 'ENOENT') {
     if (err.code === 'ENOENT') {
@@ -24,6 +26,7 @@ stat(logDir, (err, stats) => {
   }
   next();
 });
+console.timeEnd('Thread idle');
 
 // Callback Hell / Pyramid of Doom
 function next() {
@@ -47,7 +50,7 @@ function next() {
             if (err) {
               return console.log(`Err : ${err.message}`);
             }
-            console.log('Done');
+            console.timeEnd('Done');
           });
         });
       });

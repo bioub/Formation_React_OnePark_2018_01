@@ -17,6 +17,8 @@ const interval = (delay) => {
 };
 
 interval(1000)
-  .subscribe(() => {
-    console.log('interval 1s');
+  .map((i) => i + 1)
+  .filter((i) => i % 2 === 0)
+  .subscribe((i) => {
+    console.log(`interval ${i}s`);
   });

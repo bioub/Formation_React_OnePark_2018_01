@@ -25,10 +25,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" >
+      <div className="App">
         <Hello name={this.state.contact.firstName} />
         <hr />
-        <Horloge format="HH:mm"/>
+        <Horloge/>
         <hr />
         <ButtonCounter/>
         <hr />

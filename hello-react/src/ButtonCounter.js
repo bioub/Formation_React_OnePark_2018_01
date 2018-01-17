@@ -4,19 +4,16 @@ import { desactivable } from './desactivable';
 
 export class ButtonCounter extends Component {
 
-  constructor({initialCount = 0}) {
-    super();
-    this.state = {
-      count: initialCount,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
+  state = {
+    count: this.props.count,
+  };
 
-  handleClick() {
+  handleClick = () => {
+    // => ne créé pas this, arguments, super, new.target
     this.setState({
       count: this.state.count + 1,
     });
-  }
+  };
 
   render() {
     return <button onClick={this.handleClick}>{this.state.count}</button>;
@@ -24,11 +21,11 @@ export class ButtonCounter extends Component {
 }
 
 ButtonCounter.propTypes = {
-  initialCount: PropTypes.number,
+  count: PropTypes.number,
 };
 
 ButtonCounter.defaultProps = {
-  initialCount: 0,
+  count: 0,
 };
 
 
