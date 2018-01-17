@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { desactivable } from './desactivable';
+import { desactivable } from '../../hocs/desactivable';
 import format from 'date-fns/format';
 import PropTypes from 'prop-types'
 

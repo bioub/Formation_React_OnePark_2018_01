@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Hello } from './Hello';
-import { Horloge, HorlogeDesactivable } from './Horloge';
-import { ButtonCounter, ButtonCounterDesactivable } from './ButtonCounter';
-import { ContactForm } from './ContactForm';
+import { Hello } from '../UI/Hello';
+import { Horloge, HorlogeDesactivable } from '../UI/Horloge';
+import { ButtonCounter, ButtonCounterDesactivable } from '../UI/ButtonCounter';
+import { ContactForm } from '../Pages/ContactForm';
 
 class App extends Component {
   constructor() {
