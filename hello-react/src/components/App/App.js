@@ -4,6 +4,7 @@ import { Hello } from '../UI/Hello';
 import { Horloge, HorlogeDesactivable } from '../UI/Horloge';
 import { ButtonCounter, ButtonCounterDesactivable } from '../UI/ButtonCounter';
 import { ContactForm } from '../Pages/ContactForm';
+import { ListButtonCounter } from '../UI/ListButtonCounter'
 
 class App extends Component {
   constructor() {
@@ -36,7 +37,7 @@ class App extends Component {
         <hr />
         <HorlogeDesactivable format="HH:mm" />
         <hr />
-        <ButtonCounterDesactivable />
+        <ListButtonCounter />
       </div>
     );
   }
